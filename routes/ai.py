@@ -25,7 +25,7 @@ def call_internal_api(path: str):
     Example: path="insights/top-companies"
     → GET http://localhost:5000/insights/top-companies
     """
-    url = f"http://localhost:5000/{path}"
+    url = f"{os.getenv("URL")}/{path}"
     try:
         res = requests.get(url)
         return res.json()
